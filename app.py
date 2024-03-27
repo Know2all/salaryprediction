@@ -57,7 +57,7 @@ def main():
     # Make prediction
     if st.sidebar.button('Predict'):
         prediction = m.make_prediction(experience)
-        st.success(f'Predicted Salary: ${prediction:.2f}')
+        st.success(f'Predicted Salary: {prediction}')
 
 if __name__ == '__main__':
     main()
