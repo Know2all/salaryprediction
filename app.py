@@ -40,8 +40,8 @@ class MyPredictor:
         self.ridge_model = Ridge(alpha=1.0)
         self.ridge_model.fit(self.X_train_scaled, self.y_train_imputed)
 
-    def make_prediction(self):
-        user_experience = float(input("Enter years of experience: "))
+    def make_prediction(self,value):
+        user_experience = value
         user_input_scaled = self.scaler.transform(np.array([[user_experience]]))
         predicted_salary = self.ridge_model.predict(user_input_scaled)
         print(f'Predicted Salary for {user_experience} years of experience: {predicted_salary[0]}')
