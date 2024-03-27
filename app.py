@@ -44,7 +44,7 @@ class MyPredictor:
         user_experience = float(value)
         user_input_scaled = self.scaler.transform(np.array([[user_experience]]))
         predicted_salary = self.ridge_model.predict(user_input_scaled)
-        result = f'Predicted Salary for {user_experience} years of experience: {predicted_salary[0]}'
+        result = f'Predicted Salary for {user_experience} years of experience: {predicted_salary[0]:.2f}'
         return result
 
 
