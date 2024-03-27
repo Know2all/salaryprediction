@@ -44,8 +44,8 @@ class MyPredictor:
         user_experience = float(value)
         user_input_scaled = self.scaler.transform(np.array([[user_experience]]))
         predicted_salary = self.ridge_model.predict(user_input_scaled)
-        print(f'Predicted Salary for {user_experience} years of experience: {predicted_salary[0]}')
-        return predicted_salary
+        result = f'Predicted Salary for {user_experience} years of experience: {predicted_salary[0]}'
+        return result
 
 
 def main():
@@ -57,7 +57,7 @@ def main():
     # Make prediction
     if st.sidebar.button('Predict'):
         prediction = m.make_prediction(experience)
-        st.success(f'Predicted Salary: {prediction}')
+        st.success(prediction)
 
 if __name__ == '__main__':
     main()
