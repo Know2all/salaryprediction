@@ -45,6 +45,7 @@ class MyPredictor:
         user_input_scaled = self.scaler.transform(np.array([[user_experience]]))
         predicted_salary = self.ridge_model.predict(user_input_scaled)
         print(f'Predicted Salary for {user_experience} years of experience: {predicted_salary[0]}')
+        return predicted_salary
 
 
 def main():
